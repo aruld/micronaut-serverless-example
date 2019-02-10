@@ -23,26 +23,26 @@ dependencyManagement {
     }
 }
 
+
 dependencies {
-//    compile project(':isbn-validator')
     annotationProcessor "io.micronaut:micronaut-inject-java"
     annotationProcessor "io.micronaut:micronaut-validation"
     annotationProcessor "io.micronaut:micronaut-security"
-    compile "io.micronaut:micronaut-function-client"
-    runtime "com.amazonaws:aws-java-sdk-lambda:1.11.285"
-    runtime 'io.zipkin.brave:brave-instrumentation-http'
-    runtime 'io.zipkin.reporter2:zipkin-reporter'
-    compile 'io.opentracing.brave:brave-opentracing'
-    compile "io.micronaut:micronaut-tracing"
-    compile "io.micronaut:micronaut-security-jwt"
     compile "io.micronaut:micronaut-inject"
     compile "io.micronaut:micronaut-validation"
     compile "io.micronaut:micronaut-runtime"
     compile "io.micronaut:micronaut-http-client"
     compile "io.micronaut:micronaut-http-server-netty"
+    compile "io.micronaut:micronaut-tracing"
+    compile 'io.opentracing.brave:brave-opentracing'
+    compile "io.micronaut:micronaut-security-jwt"
+    compile "io.micronaut:micronaut-function-client"
     compileOnly "io.micronaut:micronaut-inject-java"
     runtime "ch.qos.logback:logback-classic:1.2.3"
     runtime "io.micronaut:micronaut-discovery-client"
+    runtime 'io.zipkin.brave:brave-instrumentation-http'
+    runtime 'io.zipkin.reporter2:zipkin-reporter'
+    runtime 'com.amazonaws:aws-java-sdk-lambda:1.11.285'
     testCompile "junit:junit:4.12"
     testCompile "io.micronaut:micronaut-inject-java"
     testCompile "org.hamcrest:hamcrest-all:1.3"

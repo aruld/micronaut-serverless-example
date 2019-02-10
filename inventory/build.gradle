@@ -25,22 +25,22 @@ dependencyManagement {
 
 dependencies {
     annotationProcessor "io.micronaut:micronaut-security"
-    compile "io.micronaut:micronaut-security-jwt"
-    compile "io.micronaut:micronaut-tracing"
-    runtime 'io.zipkin.brave:brave-instrumentation-http'
-    runtime 'io.zipkin.reporter2:zipkin-reporter'
-    compile 'io.opentracing.brave:brave-opentracing'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
     compile "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
     compile "io.micronaut:micronaut-runtime"
     compile "io.micronaut:micronaut-http-client"
     compile "io.micronaut:micronaut-http-server-netty"
+    compile "io.micronaut:micronaut-tracing"
+    compile 'io.opentracing.brave:brave-opentracing'
+    compile "io.micronaut:micronaut-security-jwt"
     kapt "io.micronaut:micronaut-inject-java"
     kapt "io.micronaut:micronaut-validation"
     kaptTest "io.micronaut:micronaut-inject-java"
     runtime "ch.qos.logback:logback-classic:1.2.3"
-    runtime "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.4.1"
+    runtime "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.7"
     runtime "io.micronaut:micronaut-discovery-client"
+    runtime 'io.zipkin.brave:brave-instrumentation-http'
+    runtime 'io.zipkin.reporter2:zipkin-reporter'
     testCompile "org.junit.jupiter:junit-jupiter-api:5.1.0"
     testCompile "org.jetbrains.spek:spek-api:1.1.5"
     testRuntime "org.junit.jupiter:junit-jupiter-engine:5.1.0"
