@@ -4,6 +4,10 @@ import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.security.annotation.Secured;
 import io.reactivex.Flowable;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 @Controller("/api")
 @Secured("isAuthenticated()")
@@ -20,6 +24,12 @@ public class BooksController {
     }
 
     @Get("/books")
+    @Operation(summary = "Find all books in store",
+            tags = {"books"},
+            responses = {
+                    @ApiResponse(content = @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = Book.class)))}
+    )
     Flowable<Book> findAll() {
         return booksFetcher.fetchBooks()
                 .flatMapMaybe(b -> isbnValidator.validateIsbn(new IsbnValidationRequest(b.getIsbn()))
@@ -35,4 +45,3 @@ public class BooksController {
                 );
     }
 }
-

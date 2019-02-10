@@ -1,8 +1,14 @@
 micronaut:
     application:
         name: gateway
+        version: 0.3
     server:
         port: 8080
+    router:
+        static-resources:
+            swagger:
+                paths: classpath:META-INF/swagger
+                mapping: /swagger/**
     security:
         enabled: true
         endpoints:
@@ -23,6 +29,12 @@ micronaut:
             propagation:
                 enabled: true
                 service-id-regex: "books|inventory"
+        interceptUrlMap:
+            -
+                pattern: /swagger/*
+                httpMethod: GET
+                access:
+                    - isAnonymous()
 consul:
     client:
         registration:
