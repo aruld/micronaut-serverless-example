@@ -27,8 +27,8 @@ public class BooksController {
     @Operation(summary = "Find all books in store",
             tags = {"books"},
             responses = {
-                    @ApiResponse(content = @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = Book.class)))}
+                    @ApiResponse(description = "", content = @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = Book.class, example = "[{\"isbn\":\"1491950358\",\"name\":\"Building Microservices\",\"stock\":2},{\"isbn\":\"1680502395\",\"name\":\"Release It!\",\"stock\":3}]")))}
     )
     Flowable<Book> findAll() {
         return booksFetcher.fetchBooks()
