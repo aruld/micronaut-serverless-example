@@ -50,3 +50,13 @@ aws lambda invoke --function-name isbn-validator --region us-east-1 --payload fi
 aws lambda invoke --function-name isbn-validator --region us-east-1 --payload file://.\payload2.json outfile2.json
 ```
 
+JWT Payload:
+
+{
+  "sub": "sherlock",
+  "nbf": 1545103990,
+  "roles": [],
+  "iss": "gateway",
+  "exp": 1545107590,
+  "iat": 1545103990
+}

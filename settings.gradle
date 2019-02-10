@@ -2,3 +2,5 @@ include 'books'
 include 'inventory'
 include 'gateway'
 include 'isbn-validator'
+include 'shared'
+
