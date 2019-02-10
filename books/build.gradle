@@ -6,7 +6,7 @@ plugins {
 apply plugin:"application"
 apply plugin:"groovy"
 
-version "0.1"
+version "0.2"
 group "example.micronaut"
 
 repositories {
@@ -17,7 +17,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom 'io.micronaut:micronaut-bom:1.0.1'
+        mavenBom 'io.micronaut:micronaut-bom:1.0.4'
     }
 }
 
