@@ -14,12 +14,12 @@ Micronaut services:
 
 Servers:
 
-consul agent -dev
-java -jar zipkin.jar
+- consul agent -dev
+- java -jar zipkin.jar
 
-books> gradlew -parallel run
-inventory> gradlew -parallel run
-gateway> gradlew -parallel run
+- books> gradlew -parallel run
+- inventory> gradlew -parallel run
+- gateway> gradlew -parallel run
 
 Notes for Windows:
 
